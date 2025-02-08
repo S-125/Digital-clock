@@ -34,12 +34,13 @@ const Changeformat=(is12hr,text)=>{
 };
   
   return (
-
+<div className="flex justify-center items-center">
     <div className='bg-[#fefefe] w-[50vw] h-[40vh] text-[30px] sm:text-[40px]  border-2 border-black rounded-[30px] flex flex-col justify-center items-center'>
       {formatTime(time)}
       <button className='text-[15px] mt-[2rem] bg-gray-300 p-3 rounded-[30px] border-2 cursor-pointer sm:text-[20px]'
       onClick={Changeformat(is12hr,text)}>
         {text}</button>
+    </div>
     </div>
   )
 }
