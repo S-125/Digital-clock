@@ -32,12 +32,22 @@ const Changeformat=(is12hr,text)=>{
     }
 }
 };
+const formatDate=(t)=>{
+    return t.toLocaleDateString("en-US",{
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    }
+    )
+};
   
   return (
 <div className="flex justify-center items-center">
-    <div className='bg-[#fefefe] w-[50vw] h-[40vh] text-[30px] sm:text-[40px]  border-2 border-black rounded-[30px] flex flex-col justify-center items-center'>
-      {formatTime(time)}
-      <button className='text-[15px] mt-[2rem] bg-gray-300 p-3 rounded-[30px] border-2 cursor-pointer sm:text-[20px]'
+    <div className='bg-[#fefefe] w-[50vw] h-auto text-[30px] sm:text-[40px]  border-2 border-black rounded-[30px] flex flex-col justify-center items-center'>
+      <p className='mt-5'>{formatTime(time)}</p>
+      <p className='text-[10px] sm:text-[20px] p-3'>{formatDate(time)}</p>
+      <button className='text-[15px] mt-[2px] m-4 bg-gray-300 p-3 rounded-[30px] border-2 cursor-pointer sm:text-[20px]'
       onClick={Changeformat(is12hr,text)}>
         {text}</button>
     </div>
